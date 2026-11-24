@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geitenshop NR1 – Winkelwagen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="planet"></div>
+    <div>GEITENSHOP<small>KOLONIE NR1</small></div>
+  </a>
+  <nav>
+    <a href="index.html">Producten</a>
+    <a href="winkelwagen.html" class="active">Winkelwagen <span class="cart-badge">0</span></a>
+    <a href="login.html">Inloggen</a>
+  </nav>
+</header>
+
+<main>
+  <h1 class="page-title">Je laadruim</h1>
+  <p class="subtitle">Controleer je bestelling voordat je hem naar de kolonie laat verzenden.</p>
+
+  <div class="two-col">
+    <div class="panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+            <th>Subtotaal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+      <div style="display:flex; justify-content:space-between; margin-top:20px;">
+        <a href="index.html" class="btn ghost">← Verder winkelen</a>
+        <button type="button" class="btn ghost" onclick="if(confirm('Winkelwagen leegmaken?')) clearCart()">Winkelwagen leegmaken</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Overzicht</h2>
+      <div id="summary"></div>
+
+      <form id="code-form" style="margin-top:18px;">
+        <div class="field" style="margin-bottom:10px;">
+          <label for="code">Kortingscode</label>
+          <input type="text" id="code" name="kortingscode" placeholder="bijv. GEIT10">
+        </div>
+        <button type="submit" class="btn ghost small">Toepassen</button>
+        <span id="code-msg" class="code-msg"></span>
+      </form>
+
+      <a href="checkout.html" id="to-checkout" class="btn full" style="margin-top:18px;">Naar afrekenen 🚀</a>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 De Geiten – Geitenshop, kolonie NR1. Alle prijzen in credits (₵).</footer>
+
+<script src="cart.js"></script>
+</body>
+</html>

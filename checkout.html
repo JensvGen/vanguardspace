@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geitenshop NR1 – Afrekenen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="checkout">
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="planet"></div>
+    <div>GEITENSHOP<small>KOLONIE NR1</small></div>
+  </a>
+  <nav>
+    <a href="index.html">Producten</a>
+    <a href="winkelwagen.html">Winkelwagen <span class="cart-badge">0</span></a>
+    <a href="login.html">Inloggen</a>
+  </nav>
+</header>
+
+<main>
+  <h1 class="page-title">Afrekenen</h1>
+  <p class="subtitle">Vul je leverlocatie in en betaal met je koloniecredits.</p>
+
+  <div class="two-col">
+    <form class="panel" action="checkout.html" method="post">
+      <h2>Kolonist</h2>
+      <div class="row">
+        <div class="field">
+          <label for="voornaam">Voornaam</label>
+          <input type="text" id="voornaam" name="voornaam" required>
+        </div>
+        <div class="field">
+          <label for="achternaam">Achternaam</label>
+          <input type="text" id="achternaam" name="achternaam" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">E-mail (interplanetair)</label>
+        <input type="email" id="email" name="email" placeholder="naam@nr1.colony" required>
+      </div>
+
+      <h2 style="margin-top:10px;">Leverlocatie</h2>
+      <div class="row">
+        <div class="field">
+          <label for="sector">Sector</label>
+          <select id="sector" name="sector">
+            <option>Sector A – Landingsplaats</option>
+            <option>Sector B – Woonkoepels</option>
+            <option>Sector C – Kassen</option>
+            <option>Sector D – Mijnbouw</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="koepel">Koepelnummer</label>
+          <input type="text" id="koepel" name="koepel" placeholder="bijv. B-17" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="opmerking">Opmerking voor de bezorgdrone</label>
+        <textarea id="opmerking" name="opmerking" rows="3" placeholder="bijv. laat achter bij de luchtsluis"></textarea>
+      </div>
+
+      <h2 style="margin-top:10px;">Betaling</h2>
+      <div class="field">
+        <label for="betaalwijze">Betaalwijze</label>
+        <select id="betaalwijze" name="betaalwijze">
+          <option value="tegoed">Koloniecredits (accounttegoed)</option>
+          <option value="kaart">Stellaire betaalkaart</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="kaartnummer">Kaartnummer</label>
+          <input type="text" id="kaartnummer" name="kaartnummer" placeholder="0000 0000 0000 0000">
+        </div>
+        <div class="field">
+          <label for="pincode">Beveiligingscode</label>
+          <input type="password" id="pincode" name="pincode" placeholder="•••">
+        </div>
+      </div>
+
+      <button type="submit" class="btn full">Bestelling plaatsen en lanceren 🚀</button>
+    </form>
+
+    <div class="panel">
+      <h2>Je bestelling</h2>
+      <div id="summary"></div>
+      <div class="alert info" style="margin-top:18px;">Beschikbaar tegoed: <strong>₵ 1.250</strong></div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 De Geiten – Geitenshop, kolonie NR1. Alle prijzen in credits (₵).</footer>
+
+<script src="cart.js"></script>
+</body>
+</html>

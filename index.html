@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geitenshop NR1 – Producten</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="planet"></div>
+    <div>GEITENSHOP<small>KOLONIE NR1</small></div>
+  </a>
+  <nav>
+    <a href="index.html" class="active">Producten</a>
+    <button type="button" class="cart-toggle" onclick="openMiniCart()">🛒 Winkelwagen <span class="cart-badge">0</span></button>
+    <a href="login.html">Inloggen</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Bevoorrading voor <span>NR1</span></h1>
+    <p>Alles wat een kolonist nodig heeft om te overleven aan de rand van het stelsel. Besteld vandaag, morgen geleverd bij je koepel.</p>
+  </section>
+
+  <div class="filters">
+    <button type="button" data-filter="alles" class="active">Alles</button>
+    <button type="button" data-filter="voedsel">Voedsel</button>
+    <button type="button" data-filter="zuurstof">Zuurstof</button>
+    <button type="button" data-filter="gereedschap">Gereedschap</button>
+    <button type="button" data-filter="onderdelen">Onderdelen</button>
+    <button type="button" data-filter="uitrusting">Uitrusting</button>
+  </div>
+
+  <div class="grid">
+    <div class="card" data-cat="zuurstof">
+      <div class="img">🫁</div>
+      <div class="body">
+        <span class="cat">Zuurstof</span>
+        <h3>Zuurstoffilter X-200</h3>
+        <p>Vervangfilter voor koepel-luchtsystemen. Gaat 30 NR1-dagen mee.</p>
+        <div class="bottom">
+          <span class="price">₵ 149</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="1">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="voedsel">
+      <div class="img">🥫</div>
+      <div class="body">
+        <span class="cat">Voedsel</span>
+        <h3>Ruimtemaaltijd 7-pack</h3>
+        <p>Gevriesdroogde maaltijden voor een week. Alleen heet water toevoegen.</p>
+        <div class="bottom">
+          <span class="price">₵ 59</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="2">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="gereedschap">
+      <div class="img">🔧</div>
+      <div class="body">
+        <span class="cat">Gereedschap</span>
+        <h3>Multitool Vanguard</h3>
+        <p>12-in-1 gereedschap, bestand tegen vacuüm en extreme kou.</p>
+        <div class="bottom">
+          <span class="price">₵ 89</span>
+          <span class="stock low">Nog 3 stuks</span>
+        </div>
+        <button class="btn small full" type="button" data-add="3">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="onderdelen">
+      <div class="img">🔋</div>
+      <div class="body">
+        <span class="cat">Onderdelen</span>
+        <h3>Fusiecel Mini</h3>
+        <p>Compacte energiecel voor rovers en noodverlichting.</p>
+        <div class="bottom">
+          <span class="price">₵ 299</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="4">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="uitrusting">
+      <div class="img">🧑‍🚀</div>
+      <div class="body">
+        <span class="cat">Uitrusting</span>
+        <h3>Ruimtepak Geit-3</h3>
+        <p>Lichtgewicht pak voor korte buitenwerkzaamheden rond de kolonie.</p>
+        <div class="bottom">
+          <span class="price">₵ 1.299</span>
+          <span class="stock low">Nog 1 stuk</span>
+        </div>
+        <button class="btn small full" type="button" data-add="5">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="voedsel">
+      <div class="img">💧</div>
+      <div class="body">
+        <span class="cat">Voedsel</span>
+        <h3>Waterrecycler 20L</h3>
+        <p>Zet afvalwater om in drinkwater. Onmisbaar in elke koepel.</p>
+        <div class="bottom">
+          <span class="price">₵ 179</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="6">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="onderdelen">
+      <div class="img">📡</div>
+      <div class="body">
+        <span class="cat">Onderdelen</span>
+        <h3>Communicatieschotel</h3>
+        <p>Verbind je koepel met het interplanetaire netwerk.</p>
+        <div class="bottom">
+          <span class="price">₵ 449</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="7">In winkelwagen</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="voedsel">
+      <div class="img">🌱</div>
+      <div class="body">
+        <span class="cat">Voedsel</span>
+        <h3>Hydrocultuur-kit</h3>
+        <p>Kweek je eigen groenten onder de koepel. Inclusief zaden.</p>
+        <div class="bottom">
+          <span class="price">₵ 119</span>
+          <span class="stock">Op voorraad</span>
+        </div>
+        <button class="btn small full" type="button" data-add="8">In winkelwagen</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 De Geiten – Geitenshop, kolonie NR1. Alle prijzen in credits (₵).</footer>
+
+<!-- Mini-winkelwagen -->
+<div class="mini-overlay" onclick="closeMiniCart()"></div>
+<aside class="mini-cart" aria-label="Winkelwagen">
+  <div class="mini-head">
+    <h2>🛒 Je laadruim</h2>
+    <button type="button" onclick="closeMiniCart()" title="Sluiten">✕</button>
+  </div>
+  <div id="mini-cart-items"></div>
+  <div class="mini-foot">
+    <div class="summary-line"><span>Subtotaal</span><span id="mini-cart-total">₵ 0</span></div>
+    <a href="winkelwagen.html" class="btn ghost full">Bekijk winkelwagen</a>
+    <a href="checkout.html" class="btn full">Afrekenen 🚀</a>
+  </div>
+</aside>
+
+<script src="cart.js"></script>
+</body>
+</html>

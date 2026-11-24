@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geitenshop NR1 – Beheer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="planet"></div>
+    <div>GEITENSHOP<small>MISSIECONTROLE</small></div>
+  </a>
+  <nav>
+    <span style="color:var(--muted);">Ingelogd als <strong style="color:var(--text);">admin</strong></span>
+    <a href="index.html">Naar shop</a>
+    <a href="login.html">Uitloggen</a>
+  </nav>
+</header>
+
+<main style="max-width:1300px;">
+  <div class="admin-layout">
+    <aside class="panel sidebar">
+      <a href="#dashboard" class="active">📊 Dashboard</a>
+      <a href="#bestellingen">📦 Bestellingen</a>
+      <a href="#producten">🛰️ Producten</a>
+      <a href="#kolonisten">🧑‍🚀 Kolonisten</a>
+      <a href="#instellingen">⚙️ Instellingen</a>
+    </aside>
+
+    <div>
+      <h1 class="page-title" id="dashboard">Missiecontrole</h1>
+      <p class="subtitle">Overzicht van de bevoorrading van kolonie NR1.</p>
+
+      <div class="stats">
+        <div class="panel stat"><div class="label">Omzet vandaag</div><div class="value">₵ 8.420</div></div>
+        <div class="panel stat"><div class="label">Bestellingen</div><div class="value">37</div></div>
+        <div class="panel stat"><div class="label">Kolonisten</div><div class="value">214</div></div>
+        <div class="panel stat"><div class="label">Lage voorraad</div><div class="value" style="color:var(--red);">2</div></div>
+      </div>
+
+      <!-- Bestellingen -->
+      <div class="panel section" id="bestellingen">
+        <div class="section-head">
+          <h2>Recente bestellingen</h2>
+          <form action="admin.html" method="get" style="display:flex; gap:8px;">
+            <input type="text" name="zoek" placeholder="Zoek op bestelnummer of naam" style="width:260px;">
+            <button class="btn small" type="submit">Zoeken</button>
+          </form>
+        </div>
+        <table>
+          <thead>
+            <tr><th>#</th><th>Kolonist</th><th>Koepel</th><th>Totaal</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1042</td><td>Lena Vos</td><td>B-17</td><td>₵ 648</td><td><span class="badge orange">In transport</span></td><td><a href="#">Bekijk</a></td></tr>
+            <tr><td>1041</td><td>Arjun Patel</td><td>A-03</td><td>₵ 1.299</td><td><span class="badge green">Geleverd</span></td><td><a href="#">Bekijk</a></td></tr>
+            <tr><td>1040</td><td>Mila de Boer</td><td>C-08</td><td>₵ 238</td><td><span class="badge green">Geleverd</span></td><td><a href="#">Bekijk</a></td></tr>
+            <tr><td>1039</td><td>Tom Jansen</td><td>D-21</td><td>₵ 449</td><td><span class="badge red">Geannuleerd</span></td><td><a href="#">Bekijk</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Producten -->
+      <div class="panel section" id="producten">
+        <div class="section-head">
+          <h2>Producten</h2>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Categorie</th><th>Prijs</th><th>Voorraad</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>🫁 Zuurstoffilter X-200</td><td>Zuurstof</td><td>₵ 149</td><td>58</td><td><a href="#">Bewerken</a></td></tr>
+            <tr><td>🔧 Multitool Vanguard</td><td>Gereedschap</td><td>₵ 89</td><td><span class="badge red">3</span></td><td><a href="#">Bewerken</a></td></tr>
+            <tr><td>🧑‍🚀 Ruimtepak Geit-3</td><td>Uitrusting</td><td>₵ 1.299</td><td><span class="badge red">1</span></td><td><a href="#">Bewerken</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin:26px 0 14px;">Nieuw product toevoegen</h3>
+        <form action="admin.html" method="post" enctype="multipart/form-data">
+          <div class="row">
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" required>
+            </div>
+            <div class="field">
+              <label for="categorie">Categorie</label>
+              <select id="categorie" name="categorie">
+                <option>Voedsel</option><option>Zuurstof</option><option>Gereedschap</option>
+                <option>Onderdelen</option><option>Uitrusting</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="prijs">Prijs (₵)</label>
+              <input type="number" id="prijs" name="prijs" min="0" required>
+            </div>
+            <div class="field">
+              <label for="voorraad">Voorraad</label>
+              <input type="number" id="voorraad" name="voorraad" min="0" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="beschrijving">Beschrijving</label>
+            <textarea id="beschrijving" name="beschrijving" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="afbeelding">Productafbeelding</label>
+            <input type="file" id="afbeelding" name="afbeelding">
+          </div>
+          <button type="submit" class="btn">Product toevoegen</button>
+        </form>
+      </div>
+
+      <!-- Kolonisten -->
+      <div class="panel section" id="kolonisten">
+        <div class="section-head"><h2>Kolonisten</h2></div>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Gebruikersnaam</th><th>E-mail</th><th>Tegoed</th><th>Rol</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>admin</td><td>admin@degeiten.nr1</td><td>–</td><td><span class="badge orange">Admin</span></td><td><a href="#">Bewerken</a></td></tr>
+            <tr><td>2</td><td>lenavos</td><td>lena@nr1.colony</td><td>₵ 1.250</td><td><span class="badge green">Kolonist</span></td><td><a href="#">Bewerken</a></td></tr>
+            <tr><td>3</td><td>arjun_p</td><td>arjun@nr1.colony</td><td>₵ 310</td><td><span class="badge green">Kolonist</span></td><td><a href="#">Bewerken</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 De Geiten – Missiecontrole Geitenshop, kolonie NR1.</footer>
+
+</body>
+</html>
